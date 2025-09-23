@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Typed from "typed.js";
+import emailjs from "@emailjs/browser";
 import profilePic from "./assets/profile.png";
 import "./App.css";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [showTop, setShowTop] = useState(false);
-
   const [menuActive, setMenuActive] = useState(false);
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -54,7 +56,6 @@ function App() {
   }, []);
 
   // Scroll spy for navbar
-  // Scroll spy for navbar
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
@@ -74,6 +75,34 @@ function App() {
     handleScroll(); // run on mount too
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          formRef.current.reset();
+
+          // Clear after 3 seconds
+          setTimeout(() => setStatus(""), 3000);
+        },
+        (error) => {
+          setStatus("❌ Failed to send message.");
+          console.error("EmailJS Error:", error);
+
+          // Clear after 3 seconds
+          setTimeout(() => setStatus(""), 3000);
+        }
+      );
+  };
 
   // Data arrays
   const technicalSkills = [
@@ -345,7 +374,9 @@ function App() {
           <ul className="contact-list">
             <li>
               <i className="bx bxs-send"></i>
-              <span>bpdpramuditha@gmail.com</span>
+              <a href="mailto:bpdpramuditha@gmail.com">
+                bpdpramuditha@gmail.com
+              </a>
             </li>
             <li>
               <i className="bx bxs-phone"></i>
@@ -370,13 +401,40 @@ function App() {
         </div>
 
         <div className="contact-form">
-          <form>
-            <input type="text" placeholder="Enter Your Name" required />
-            <input type="email" placeholder="Enter Your Email" required />
-            <input type="text" placeholder="Enter Your Subject" />
-            <textarea placeholder="Enter Your Message" required />
+          <form ref={formRef} onSubmit={sendEmail}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Enter Your Subject"
+            />
+            <textarea
+              name="message"
+              placeholder="Enter Your Message"
+              required
+            />
             <input type="submit" value="Send Message" className="send" />
           </form>
+          {status && (
+            <p
+              className={`form-status ${
+                status.includes("✅") ? "success" : "error"
+              } ${status === "" ? "hidden" : ""}`}
+            >
+              {status}
+            </p>
+          )}
         </div>
       </section>
 

@@ -7,6 +7,12 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [showTop, setShowTop] = useState(false);
 
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
@@ -130,31 +136,51 @@ function App() {
         <a href="#home" className="logo">
           Portfolio.
         </a>
-        <nav className="navbar">
-          <a className={activeSection === "home" ? "active" : ""} href="#home">
+
+        {/* Hamburger */}
+        <div
+          className={`hamburger ${menuActive ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Navbar */}
+        <nav className={`navbar ${menuActive ? "active" : ""}`}>
+          <a
+            className={activeSection === "home" ? "active" : ""}
+            href="#home"
+            onClick={() => setMenuActive(false)}
+          >
             Home
           </a>
           <a
             className={activeSection === "about" ? "active" : ""}
             href="#about"
+            onClick={() => setMenuActive(false)}
           >
             About
           </a>
           <a
             className={activeSection === "services" ? "active" : ""}
             href="#services"
+            onClick={() => setMenuActive(false)}
           >
             Services
           </a>
           <a
             className={activeSection === "skills" ? "active" : ""}
             href="#skills"
+            onClick={() => setMenuActive(false)}
           >
             Skills
           </a>
           <a
             className={activeSection === "contact" ? "active" : ""}
             href="#contact"
+            onClick={() => setMenuActive(false)}
           >
             Contact
           </a>

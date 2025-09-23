@@ -5,6 +5,20 @@ import "./App.css";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowTop(true);
+      } else {
+        setShowTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Typed.js for animated titles
   useEffect(() => {
@@ -34,10 +48,11 @@ function App() {
   }, []);
 
   // Scroll spy for navbar
+  // Scroll spy for navbar
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
-      const scrollPos = window.scrollY + 150;
+      const scrollPos = window.scrollY + window.innerHeight / 3; // better offset
 
       sections.forEach((section) => {
         if (
@@ -50,6 +65,7 @@ function App() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run on mount too
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -125,16 +141,16 @@ function App() {
             About
           </a>
           <a
-            className={activeSection === "skills" ? "active" : ""}
-            href="#skills"
-          >
-            Skills
-          </a>
-          <a
             className={activeSection === "services" ? "active" : ""}
             href="#services"
           >
             Services
+          </a>
+          <a
+            className={activeSection === "skills" ? "active" : ""}
+            href="#skills"
+          >
+            Skills
           </a>
           <a
             className={activeSection === "contact" ? "active" : ""}
@@ -299,14 +315,18 @@ function App() {
             roles. If you have a position or project that fits my skills, let’s
             connect!
           </p>
-          <div className="contact-list">
+
+          <ul className="contact-list">
             <li>
-              <i className="bx bxs-send">bpdpramuditha@gmail.com</i>
+              <i className="bx bxs-send"></i>
+              <span>bpdpramuditha@gmail.com</span>
             </li>
             <li>
-              <i className="bx bxs-phone">+94702618507 </i>
+              <i className="bx bxs-phone"></i>
+              <span>+94702618507</span>
             </li>
-          </div>
+          </ul>
+
           <div className="contact-icons">
             <a href="https://www.facebook.com/denith.pramuditha/">
               <i className="bx bxl-facebook"></i>
@@ -322,7 +342,24 @@ function App() {
             </a>
           </div>
         </div>
+
+        <div className="contact-form">
+          <form>
+            <input type="text" placeholder="Enter Your Name" required />
+            <input type="email" placeholder="Enter Your Email" required />
+            <input type="text" placeholder="Enter Your Subject" />
+            <textarea placeholder="Enter Your Message" required />
+            <input type="submit" value="Send Message" className="send" />
+          </form>
+        </div>
       </section>
+
+      <div className="copy-text">
+        <p>Developed by Denith Pramuditha @ 2025</p>
+      </div>
+      <a href="#home" className={`top ${showTop ? "show" : ""}`}>
+        <i className="bx bx-up-arrow-alt"></i>
+      </a>
     </>
   );
 }

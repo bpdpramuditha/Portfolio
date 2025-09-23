@@ -275,6 +275,7 @@ section {
   animation: slideLeft 1s ease forwards;
 }
 
+
 .sub-title {
   font-size: 36px;
   font-weight: 700;
@@ -339,6 +340,7 @@ section {
   background: #fff;
   box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
 }
+
 
 /* Skills Section */
 .skills-title {
@@ -455,6 +457,186 @@ section {
   color: #ededed;
 }
 
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  gap: 4rem;             
+  padding: 0 80px;       
+  margin-top: 130px;
+}
+
+.contact-title h2 {
+  font-size: 36px;
+  text-align: center;
+  color: #00eaff;
+  grid-column: 1 / -1;   
+  text-align: center;    
+  margin-bottom: 2rem; 
+}
+
+.contact-title h4 {
+  margin: 15px 0;
+  color: #e4e4e4;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-title p {
+  color: #b1b1b1;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 2rem;
+}
+
+.contact-list {
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.contact-list li {
+  list-style: none;
+  margin: 12px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+}
+
+.contact-list i {
+  color: #00eaff;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  
+}
+
+.contact-list li:hover {
+  transform: translateY(-2px);
+  color: #00eaff;
+}
+
+.contact-list li:hover i {
+  transform: scale(1.2);
+}
+
+/* Social Icons */
+.contact-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  margin: 0 10px;
+  font-size: 22px;
+  color: #00eaff;
+  border: 2px solid #00eaff;
+  border-radius: 50%;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;                    
+  transform: translateY(20px);   
+  animation: fadeUp 0.6s forwards; 
+}
+
+/* staggered delay */
+.contact-icons a:nth-child(1) { animation-delay: 1.2s; }
+.contact-icons a:nth-child(2) { animation-delay: 1.4s; }
+.contact-icons a:nth-child(3) { animation-delay: 1.6s; }
+.contact-icons a:nth-child(4) { animation-delay: 1.8s; }
+
+/* hover effect */
+.contact-icons a:hover {
+  background: #00eaff;
+  color: #081b29;
+  box-shadow: 0 0 15px #00eaff;
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+.contact-form form {
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  outline: none;
+  width: 95%;
+  padding: 12px 15px;
+  background: #1c1c1e;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contact-form .send  {
+  display: inline-block;
+  padding: 12px 28px;
+  margin-top: 18px;
+  border-radius: 40px;
+  background: #0ef;
+  color: #081b29;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.contact-form .send:hover {
+   box-shadow:
+    0 0 30px rgba(0, 238, 255, 0.6),
+    0 0 60px rgba(0, 238, 255, 0.4),
+    0 0 90px rgba(0, 238, 255, 0.2);
+}
+
+.copy-text p{
+  width: 100%;
+  text-align: center;
+  padding: 25px 0 ;
+  background: rgb(7, 85, 91);
+  font-weight: 300;
+  margin-top: 70px;
+}
+
+.top {
+  position: fixed;
+  bottom: 2.1rem;
+  right: 2.1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.top i{
+  color: #000;
+  background: #0ef;
+  font-size: 20px;
+  padding: 10px; 
+  border-radius: 0.5rem;
+}
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
@@ -520,7 +702,6 @@ section {
 }
 
 
-
 /* Animations */
 @keyframes slideRight { 0% { transform: translateX(-100px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
 @keyframes slideLeft  { 0% { transform: translateX(100px);  opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
@@ -533,5 +714,12 @@ section {
   }
   to {
     /* final percent will be set dynamically in JS/React */
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

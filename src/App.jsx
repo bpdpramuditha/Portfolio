@@ -229,16 +229,32 @@ function App() {
             achievements.
           </p>
           <div className="home-scl">
-            <a href="https://www.facebook.com/denith.pramuditha/">
+            <a
+              href="https://www.facebook.com/denith.pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/denith_pramuditha/">
+            <a
+              href="https://www.instagram.com/denith_pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/denith-pramuditha/">
+            <a
+              href="https://www.linkedin.com/in/denith-pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="https://github.com/bpdpramuditha">
+            <a
+              href="https://github.com/bpdpramuditha"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-github"></i>
             </a>
           </div>
@@ -374,7 +390,11 @@ function App() {
           <ul className="contact-list">
             <li>
               <i className="bx bxs-send"></i>
-              <a href="mailto:bpdpramuditha@gmail.com">
+              <a
+                href="mailto:bpdpramuditha@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 bpdpramuditha@gmail.com
               </a>
             </li>
@@ -385,16 +405,32 @@ function App() {
           </ul>
 
           <div className="contact-icons">
-            <a href="https://www.facebook.com/denith.pramuditha/">
+            <a
+              href="https://www.facebook.com/denith.pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/denith_pramuditha/">
+            <a
+              href="https://www.instagram.com/denith_pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/denith-pramuditha/">
+            <a
+              href="https://www.linkedin.com/in/denith-pramuditha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="https://github.com/bpdpramuditha">
+            <a
+              href="https://github.com/bpdpramuditha"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="bx bxl-github"></i>
             </a>
           </div>

@@ -5,9 +5,9 @@
   "type": "module",
   "homepage": "https://bpdpramuditha.github.io/Portfolio",
   "scripts": {
-     "dev": "vite",
+    "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
+    "preview": "vite preview",
     "deploy": "gh-pages -d dist",
     "lint": "eslint ."
   },

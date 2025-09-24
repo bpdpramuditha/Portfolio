@@ -110,13 +110,13 @@ function App() {
       name: "HTML",
       icon: "bx bxl-html5",
       style: { color: "#c95d2e" },
-      percent: "90%",
+      percent: "75%",
     },
     {
       name: "CSS",
       icon: "bx bxl-css3",
       style: { color: "#147bbc" },
-      percent: "80%",
+      percent: "70%",
     },
     {
       name: "JavaScript",
@@ -128,19 +128,19 @@ function App() {
       name: "Python",
       icon: "bx bxl-python",
       style: { color: "#c32ec9" },
-      percent: "90%",
+      percent: "80%",
     },
     {
       name: "Java",
       icon: "bx bxl-java",
       style: { color: "#127093ff" },
-      percent: "95%",
+      percent: "80%",
     },
     {
       name: "React",
       icon: "bx bxl-react",
       style: { color: "#69bcbc" },
-      percent: "95%",
+      percent: "70%",
     },
     {
       name: "Node",
@@ -151,11 +151,11 @@ function App() {
   ];
 
   const professionalSkills = [
-    { name: "Creativity", percent: 90 },
-    { name: "Problem Solving", percent: 75 },
+    { name: "Creativity", percent: 80 },
+    { name: "Problem Solving", percent: 80 },
     { name: "Teamwork", percent: 85 },
     { name: "Communication", percent: 65 },
-    { name: "Adaptability", percent: 65 },
+    { name: "Adaptability", percent: 85 },
   ];
 
   return (

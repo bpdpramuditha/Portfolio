@@ -197,7 +197,7 @@ function App() {
             href="#services"
             onClick={() => setMenuActive(false)}
           >
-            Services
+            Projects
           </a>
           <a
             className={activeSection === "skills" ? "active" : ""}
@@ -298,7 +298,7 @@ function App() {
       {/* Services Section */}
       <section id="services">
         <div className="container">
-          <h1 className="sub-title">My Services</h1>
+          <h1 className="sub-title">My Projects</h1>
           <div className="services-list">
             <div>
               <i className="bx bx-code"></i>

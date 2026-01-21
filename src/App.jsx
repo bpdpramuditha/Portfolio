@@ -243,9 +243,9 @@ function App() {
             </h2>
 
             <p className="hero-desc">
-              I’m a software engineer focused on clean UI, scalable backend
-              services, and AI-powered product features (RAG, embeddings, and
-              explainable ranking).
+              I am a Software Engineer building scalable backend systems and
+              AI-powered features using RAG, embeddings, and explainable
+              ranking.
             </p>
 
             <div className="hero-actions">
@@ -304,9 +304,18 @@ function App() {
           <div className="section-head">
             <h2>About</h2>
             <p>
-              Self-driven developer passionate about building robust
-              applications and AI-powered features with strong engineering
-              fundamentals.
+              Self-driven software engineer with strong engineering fundamentals
+              and hands-on experience in building robust, scalable applications
+              and AI-powered features. Experienced in designing reliable backend
+              services, working with modern frameworks, and developing
+              intelligent systems using techniques such as Retrieval-Augmented
+              Generation (RAG), vector embeddings, and explainable ranking
+              mechanisms. Passionate about writing clean, maintainable code,
+              solving real-world problems, and continuously learning new
+              technologies. Comfortable collaborating in team environments,
+              contributing to code reviews, and shipping production-ready
+              solutions with a focus on performance, reliability, and
+              transparency in AI-driven systems.
             </p>
           </div>
 
@@ -316,7 +325,7 @@ function App() {
               <p>
                 I design and develop modern web apps with a focus on
                 performance, maintainability, and great user experience. I enjoy
-                turning real problems into clean solutions—end to end.
+                turning real problems into clean solutions end to end.
               </p>
 
               <div className="about-stats">

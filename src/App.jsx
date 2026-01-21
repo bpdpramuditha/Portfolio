@@ -108,9 +108,9 @@ function App() {
   useEffect(() => {
     const typed = new Typed(".typed-text", {
       strings: [
-        "Full Stack Developer",
-        "AI-Driven Builder",
-        "Backend + Frontend Engineer",
+        "Full Stack Application",
+        "AI-Driven Application",
+        "Web Application",
       ],
       typeSpeed: 75,
       backSpeed: 45,
